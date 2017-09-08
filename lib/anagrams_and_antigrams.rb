@@ -10,13 +10,15 @@ class Palingram
     str1_reverse = str1.downcase.reverse
     str2_downcase = str2.downcase
     if (/[aeiouAEIOU]/.match(str1) === nil || /[aeiouAEIOU]/.match(str2) === nil)
-      'This is not a word/words'
+      'This are not words'
     elsif (str1_arr === str2_arr && str1_reverse === str2_downcase)
       'These words are palindromes and anagrams'
     elsif (str1_arr === str2_arr)
       'These words are anagrams'
+    elsif (str1.match(str2) === nil)
+      'These words are antigrams'
     else
-      'These words are not anagrams'
+    'These words are not anagrams'
     end
   end
 end
@@ -27,12 +29,14 @@ puts "Type another word"
 str2 = gets.chomp
 example = Palingram.new()
 result = example.is_palingram(str1, str2)
-if result = 'This is not a word/words'
-  puts 'This is not a word/words'
+if result = 'These are not words'
+  puts 'These are not words'
 elsif result === 'These words are palindromes and anagrams'
   puts 'These words are palindromes and anagrams'
 elsif result === 'These words are anagrams'
   puts 'These words are anagrams'
+elsif result === 'These words are antigrams'
+  puts 'These words are antigrams'
 else result === 'These words are not anagrams'
   puts "These words are not anagrams"
 end

@@ -11,5 +11,8 @@ describe('#anagrams_and_antigrams') do
   it('will ignore case when checking to see if words are anagrams') do
     expect(example.is_anagram('Cinema', 'Iceman')).to(eq(true))
   end
+  it('will check if a phrase is an anagram') do
+    expect(example.is_anagram('Meal for one', 'For me alone')).to(eq(true))
+  end
 
 end

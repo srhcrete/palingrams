@@ -15,10 +15,15 @@ class Palingram
   end
 end
 
-puts "Type a word"
-toss1 = gets.chomp
-puts "Type another word"
-toss2 = gets.chomp
 
-example = Anagram.new()
-game.wins?(toss1, toss2)
+puts "Type a word"
+str1 = gets.chomp
+puts "Type another word"
+str2 = gets.chomp
+example = Palingram.new()
+result = example.is_anagram(str1, str2)
+if result === true
+  puts "These words are anagrams"
+else
+  puts "These words are not anagrams"
+end

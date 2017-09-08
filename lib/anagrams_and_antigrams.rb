@@ -5,17 +5,15 @@ class Palingram
   end
 
   def is_palingram(str1, str2)
-    str1_arr = str1.downcase.split('').sort
-    str2_arr = str2.downcase.split('').sort
-    str1_join = str1_arr.join.gsub(/\W/, '')
-    str2_join = str2_arr.join.gsub(/\W/, '')
+    str1_arr = str1.downcase.split('').sort.join.gsub(/\W/, '')
+    str2_arr = str2.downcase.split('').sort.join.gsub(/\W/, '')
     str1_reverse = str1.downcase.reverse
     str2_downcase = str2.downcase
     if (/[aeiouAEIOU]/.match(str1) === nil || /[aeiouAEIOU]/.match(str2) === nil)
       'These are not words'
-    elsif (str1_join === str2_join && str1_reverse === str2_downcase)
+    elsif (str1_arr === str2_arr && str1_reverse === str2_downcase)
       'These words are palindromes and anagrams'
-    elsif (str1_join === str2_join)
+    elsif (str1_arr === str2_arr)
       'These words are anagrams'
     elsif (str1.match(str2) === nil)
       'These words are antigrams'
@@ -31,14 +29,19 @@ puts "Type another word"
 str2 = gets.chomp
 example = Palingram.new()
 result = example.is_palingram(str1, str2)
-if result === 'These are not words'
-  puts 'These are not words'
-elsif result === 'These words are palindromes and anagrams'
-  puts 'These words are palindromes and anagrams'
-elsif result === 'These words are anagrams'
-  puts 'These words are anagrams'
-elsif result === 'These words are antigrams'
-  puts 'These words are antigrams'
-else result === 'These words are not anagrams'
-  puts "These words are not anagrams"
+not_words = 'These are not words'
+palingrams = 'These words are palindromes and anagrams'
+anagrams = 'These words are anagrams'
+antigrams = 'These words are antigrams'
+not_anagrams = 'These words are anagrams'
+if result === not_words
+  puts not_words
+elsif result === palingrams
+  puts palingrams
+elsif result === anagrams
+  puts anagrams
+elsif result === antigrams
+  puts antigrams
+else result === not_anagrams
+  puts not_anagrams
 end

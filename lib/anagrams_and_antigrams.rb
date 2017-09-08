@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 
 class Palingram
-  def initialize
+  def initialize()
   end
 
   def is_anagram(str1, str2)
-    str1 = str1.split('').sort
-    str2 = str2.split('').sort
+    str1 = str1.downcase.split('').sort
+    str2 = str2.downcase.split('').sort
     if (str1 === str2)
       true
     else
@@ -14,7 +14,6 @@ class Palingram
     end
   end
 end
-
 
 puts "Type a word"
 str1 = gets.chomp

@@ -7,13 +7,15 @@ class Palingram
   def is_palingram(str1, str2)
     str1_arr = str1.downcase.split('').sort
     str2_arr = str2.downcase.split('').sort
+    str1_join = str1_arr.join.gsub(/\W/, '')
+    str2_join = str2_arr.join.gsub(/\W/, '')
     str1_reverse = str1.downcase.reverse
     str2_downcase = str2.downcase
     if (/[aeiouAEIOU]/.match(str1) === nil || /[aeiouAEIOU]/.match(str2) === nil)
       'These are not words'
-    elsif (str1_arr === str2_arr && str1_reverse === str2_downcase)
+    elsif (str1_join === str2_join && str1_reverse === str2_downcase)
       'These words are palindromes and anagrams'
-    elsif (str1_arr === str2_arr)
+    elsif (str1_join === str2_join)
       'These words are anagrams'
     elsif (str1.match(str2) === nil)
       'These words are antigrams'

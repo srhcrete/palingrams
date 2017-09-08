@@ -6,7 +6,7 @@ describe('#anagrams_and_antigrams') do
   example = Palingram.new()
 
   it('will check for vowels to verify if input is a word') do
-    expect(example.is_palingram('lvd', 'ppll')).to(eq('This are not words'))
+    expect(example.is_palingram('lvd', 'ppll')).to(eq('These are not words'))
   end
   it('will check two words to see if they are anagrams') do
     expect(example.is_palingram('cinema', 'iceman')).to(eq('These words are anagrams'))

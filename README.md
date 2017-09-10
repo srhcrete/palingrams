@@ -19,6 +19,7 @@ _Create method that can recognize anagrams, palindromes, and antigrams in words 
 | Check is anagram is also a palindrome| 'Live', 'Evil'    | 'These words are anagrams and palindromes' |
 | Check if a phrase or word is an antigram| Hi', 'Bye Bye'     | 'These words are antigrams' |
 | Check if a phrase is an anagram or antigram, ignoring punctuation| 'Election results', 'Lies! Let's recount'  | 'These words are anagrams' |
+| If words are not anagrams, checks how many letter matches they have| 'tacocat', 'forgotten'  | 'These words are not anagrams, but have 3 matching sets of letters' |
 
 ## Setup/Installation Requirements
 
